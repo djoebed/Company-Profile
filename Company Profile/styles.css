@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ==========================================================================
+   PERUBAHAN UTAMA: Restrukturisasi Layout Header dengan Flexbox & Posisi Absolut
+   ========================================================================== */
+header {
+    background: #333;
+    color: #fff;
+    padding: 40px 0 30px 0; /* Menambah ruang padding atas agar teks tidak menumpuk menu */
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+    position: relative;     /* Menjadi acuan koordinat absolut untuk menu navigasi */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column; /* Mengalirkan tulisan nama perusahaan dan gambar ke bawah */
+    align-items: flex-start;/* Memastikan konten teks dan gambar selalu rapat kiri */
+    gap: 15px;              /* Jarak antara tulisan nama perusahaan dan gambar di bawahnya */
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+/* Memindahkan seluruh komponen pembungkus menu ke sisi pojok kanan atas */
+header nav {
+    position: absolute;     /* Mencopot navigasi dari baris normal dokumen */
+    top: 20px;              /* Jarak presisi dari batas atas layar header */
+    right: 10%;             /* Mengunci jarak horizontal agar sejajar sisi kanan kontainer (80% lebar awal) */
+    margin-top: 0;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;          /* Memastikan daftar menu berjejer horizontal ke kanan */
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 25px;      /* Memberikan ruang spasi yang pas antar kata menu */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;        /* Ukuran ideal huruf menu navigasi */
+    transition: color 0.2s ease;
+}
+
+header nav ul li a:hover {
+    color: #77aaff;         /* Memberikan efek warna menyala saat pointer menyentuh menu */
+}
+
+/* Mengunci posisi gambar agar tetap berada di pojok kiri bawah teks */
+header img {
+    max-width: 35%;
+    border-radius: 10px;
+    display: block;
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   BAGIAN KONTEN DAN HALAMAN UTAMA (Sesuai Struktur Awal Anda)
+   ========================================================================== */
+.section {
+    padding: 20px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.layanan-list, .portofolio-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.layanan-item, .portofolio-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.portofolio-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #77aaff;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact a:hover {
+    background: #00f2fe;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
